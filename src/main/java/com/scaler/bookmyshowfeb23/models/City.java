@@ -16,3 +16,6 @@ public class City extends BaseModel {
     @OneToMany
     private List<Theatre> theatres;
 }
+
+
+

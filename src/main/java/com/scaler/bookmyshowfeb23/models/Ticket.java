@@ -21,7 +21,7 @@ public class Ticket extends BaseModel {
     private List<ShowSeat> showSeats;
     private double totalAmount;
 
-    @ManyToOne
+    @Enumerated(EnumType.ORDINAL)
     private TicketStatus ticketStatus;
 
     private Date timeOfBooking;
@@ -29,3 +29,6 @@ public class Ticket extends BaseModel {
     @OneToMany(mappedBy = "ticket")
     private List<Payment> payments;
 }
+
+//payment - ticket M:1 -> ticket_id in the payments table.
+// ticket - payment -> 1:M -> ticket_id in the payments table.

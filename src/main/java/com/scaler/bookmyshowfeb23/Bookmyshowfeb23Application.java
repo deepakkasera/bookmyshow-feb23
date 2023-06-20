@@ -9,7 +9,6 @@ public class Bookmyshowfeb23Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Bookmyshowfeb23Application.class, args);
-
     }
 
 }

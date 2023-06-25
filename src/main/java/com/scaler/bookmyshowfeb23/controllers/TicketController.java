@@ -4,6 +4,7 @@ import com.scaler.bookmyshowfeb23.dto.BookTicketRequestDto;
 import com.scaler.bookmyshowfeb23.dto.BookTicketResponseDto;
 import com.scaler.bookmyshowfeb23.dto.CancelTicketRequestDto;
 import com.scaler.bookmyshowfeb23.dto.CancelTicketResponseDto;
+import com.scaler.bookmyshowfeb23.exception.ShowSeatNotAvailableException;
 import com.scaler.bookmyshowfeb23.models.ResponseStatus;
 import com.scaler.bookmyshowfeb23.models.Ticket;
 import com.scaler.bookmyshowfeb23.services.TicketService;
@@ -19,7 +20,7 @@ public class TicketController {
         this.ticketService = ticketService;
     }
 
-   public BookTicketResponseDto bookTicket(BookTicketRequestDto requestDto) {
+   public BookTicketResponseDto bookTicket(BookTicketRequestDto requestDto) throws ShowSeatNotAvailableException {
        Ticket ticket = ticketService.bookTicket(
                requestDto.getShowSeatIds(),
                requestDto.getUserId()

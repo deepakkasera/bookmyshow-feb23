@@ -7,8 +7,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findAllById(List<Long> userIds);
+
+    @Override
+    Optional<User> findById(Long userId);
 }
